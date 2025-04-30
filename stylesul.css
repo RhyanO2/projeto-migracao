@@ -1,0 +1,891 @@
+    body,
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    flex-grow: 1;
+    align-content: center;
+}
+
+
+header {
+    background: linear-gradient(135deg, #2E8B57, #4682B4);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+section {
+    margin-top: 30px;
+    padding: 0 5%;
+}
+
+.logo img {
+    height: 50px;
+    width: 180px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav li {
+    position: relative;
+}
+
+nav li:hover {
+    text-decoration: none;
+}
+
+nav li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #008b3a;
+    transition: width 0.3s ease;
+}
+
+nav li:hover::after {
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff945;
+}
+
+/* Conteúdo Sul Modernizado */
+.sul-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sul-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.hisul,
+.hisul1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hisul {
+    font-size: 2.5rem;
+    color: #2E8B57;
+    position: relative;
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.hisul::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #2E8B57, #4682B4);
+    border-radius: 2px;
+}
+
+/* Container Text e Carrossel */
+.containerText {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.titleText h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #2E8B57;
+    position: relative;
+}
+
+.titleText h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2E8B57, #4682B4);
+    border-radius: 2px;
+}
+
+.titleText p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Carrossel Modernizado */
+.containerCar {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carrossel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(43, 104, 25, 0.200);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+button.prev:hover,
+button.next:hover {
+    background: #27c15069;
+    transform: translateY(-50%) scale(1.1);
+}
+
+button.prev {
+    left: 25px;
+}
+
+button.next {
+    right: 25px;
+}
+
+/* Cards dos Estados Modernizados */
+.sulcards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0;
+    margin: 50px 0;
+}
+
+.cardsul {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    border: none;
+    border-top: 4px solid #D2691E;
+}
+
+.cardsul a {
+    text-decoration: none;
+}
+
+.cardsul:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.cardsul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #50bd7f, #4682B4);
+}
+
+.titlecard {
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), rgba(70, 130, 180, 0.1));
+    padding: 20px;
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2E8B57;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cardsul h5 {
+    color: #44574d;
+    font-weight: 700;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+.cardsul p {
+    padding: 0 20px 20px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Seção Chimarrão Modernizada */
+.histmate {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #358e23;
+}
+
+.ORIGEM {
+    padding: 40px;
+}
+
+.ORIGEM h2 {
+    color: #2E8B57;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.ORIGEM h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #D2691E;
+    border-radius: 2px;
+}
+
+.ORIGEM p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.mate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #F8F9FA;
+}
+
+.matefoto {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.mate:hover .matefoto {
+    transform: scale(1.03);
+}
+
+/* Estatísticas Modernizadas */
+.nhabitas h3 {
+    font-size: 1.5rem;
+    color: #2E8B57;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stats {
+    background: white;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    margin: 30px 0;
+}
+
+.stats ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.stats li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #555;
+    position: relative;
+    padding-left: 30px;
+}
+
+.stats li::before {
+    content: '•';
+    color: #4682B4;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.stats li:last-child {
+    border-bottom: none;
+}
+
+/* Gráfico Modernizado */
+.grafico {
+    background: white;
+    border-radius: 16px;
+    padding: 5px;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 50px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 400px;
+    border: 1px solid rgba(70, 130, 180, 0.1);
+}
+
+/* Oktoberfest Section */
+.oktoberfest-container {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #358e23;
+}
+
+.oktoberfest-content {
+    padding: 40px;
+}
+
+.oktoberfest-content h2 {
+    color: #2E8B57;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.oktoberfest-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #D2691E;
+    border-radius: 2px;
+}
+
+.oktoberfest-content p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.oktoberfest-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #F8F9FA;
+}
+
+.oktoberfest-video iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Modernizado */
+footer {
+    background: linear-gradient(135deg, #2E8B57, #4682B4);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 50px;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+footer p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer p:first-child {
+    font-weight: 600;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .containerText {
+        grid-template-columns: 1fr;
+    }
+
+    .histmate {
+        grid-template-columns: 1fr;
+    }
+
+    .mate {
+        order: -1;
+        padding: 0;
+    }
+
+    .matefoto {
+        border-radius: 0;
+        max-height: 300px;
+    }
+
+    .oktoberfest-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .oktoberfest-video {
+        order: -1;
+        padding: 0;
+    }
+    
+    .oktoberfest-video iframe {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .containerText,
+    .histmate {
+        padding: 25px;
+    }
+
+    .sulcards {
+        grid-template-columns: 1fr;
+    }
+
+    button.prev,
+    button.next {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .grafico {
+        height: 300px;
+    }
+}
+
+/* Seção Guerra dos Farrapos */
+.farrapos-container {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 50px 0;
+    border: 1px solid #358e23;
+}
+
+.farrapos-content {
+    padding: 40px;
+}
+
+.farrapos-content h2 {
+    color: #2E8B57;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.farrapos-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #D2691E;
+    border-radius: 2px;
+}
+
+.farrapos-content > p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.farrapos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.farrapos-card {
+    background: #F8F9FA;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #4682B4;
+}
+
+.farrapos-card:hover {
+    transform: translateY(-5px);
+}
+
+.farrapos-card h3 {
+    color: #2E8B57;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.farrapos-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #D2691E;
+}
+
+.farrapos-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.farrapos-card ul {
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.farrapos-card li {
+    color: #555;
+    line-height: 1.6;
+    padding: 5px 0;
+    position: relative;
+}
+
+.farrapos-card li::before {
+    content: '•';
+    color: #4682B4;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Quiz Simplificado */
+.quiz-simple {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 50px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #2E8B57;
+}
+
+.quiz-simple h2 {
+    color: #2E8B57;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.quiz-simple h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #D2691E;
+}
+
+.quiz-question {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #F8F9FA;
+    border-radius: 10px;
+}
+
+.quiz-question h3 {
+    color: #2E8B57;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.quiz-btn {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.quiz-btn:hover {
+    background: #f0f0f0;
+}
+
+.quiz-btn.correct {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.quiz-btn.incorrect {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.quiz-feedback {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    display: none;
+}
+
+.quiz-feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.quiz-feedback.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+.quiz-score {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+.quiz-score span {
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-question {
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .farrapos-content {
+        padding: 25px;
+    }
+    
+    .farrapos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .farrapos-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #cfc8c8;
+        flex-direction: column;
+        gap: 26px;
+        align-items: start;
+        padding-top: 60px;
+        transition: left 0.3s ease-in-out;
+        z-index: 999999;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu li {
+        width: 60%;
+        text-align: left;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        position: fixed;
+        top: 15px;
+        right: 40px;
+        z-index: 1002;
+        color: #050505;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hisul {
+        font-size: 2rem;
+    }
+
+    .ORIGEM h2,
+    .titleText h2 {
+        font-size: 1.5rem;
+    }
+
+    .stats {
+        padding: 20px;
+    }
+
+    .stats li {
+        font-size: 1rem;
+    }
+
+    .oktoberfest-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .oktoberfest-content p {
+        font-size: 1rem;
+    }
+}
