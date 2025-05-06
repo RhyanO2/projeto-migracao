@@ -1,4 +1,4 @@
-// Menu toggle (mantenha este código)
+
 document.addEventListener('DOMContentLoaded', function(){
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    // Carrossel (mantenha este código)
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
