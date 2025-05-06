@@ -218,7 +218,7 @@ footer p:first-child {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 25px;
     }
     
     .menu-toggle {
@@ -227,7 +227,7 @@ footer p:first-child {
         cursor: pointer;
     }
     
-    .mobile-menu {
+     .mobile-menu {
         position: fixed;
         top: 80px;
         left: 0;
@@ -237,10 +237,11 @@ footer p:first-child {
         transform: translateY(-100%);
         transition: transform 0.3s;
         z-index: 99;
-    }
+    } 
     
     .mobile-menu.active {
         transform: translateY(0);
+        gap: 25px;
     }
     
     .mobile-menu ul {
@@ -250,7 +251,7 @@ footer p:first-child {
 }
 
 @media (max-width: 480px) {
-    .menu {
+   .menu {
         position: fixed;
         top: 0;
         margin: 0;
@@ -273,6 +274,8 @@ footer p:first-child {
     .menu li {
         width: 60%;
         text-align: left;
+        padding-left: 50px;
+        
     }
 
     .menu-toggle {
@@ -284,6 +287,7 @@ footer p:first-child {
         right: 40px;
         z-index: 1002;
         color: #ffffff;
+        
     }
 
     .overlay {
@@ -296,7 +300,8 @@ footer p:first-child {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease-in-out;
-        z-index: 999999;
+        z-index: 999;
+      
     }
 
     .overlay.active {
