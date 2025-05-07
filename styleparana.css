@@ -250,7 +250,7 @@ footer p:first-child {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
    .menu {
         position: fixed;
         top: 0;
